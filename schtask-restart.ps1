@@ -1,4 +1,5 @@
-﻿$RestartTime = Get-Date
+﻿Unregister-ScheduledTask -TaskName 'Restart'
+$RestartTime = Get-Date
 $RestartTime = $RestartTime.AddMinutes(10)
 $RestartTime = $RestartTime.ToString("hh:mmtt")
 $Action = New-ScheduledTaskAction -Execute 'shutdown.exe'-Argument '-r -t 60'
